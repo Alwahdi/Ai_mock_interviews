@@ -14,8 +14,8 @@ interface FormFieldProps<T> extends FieldValues {
   control: Control<T>;
   name: Path<T>;
   label: string;
-  placeholder?: "text" | "password" | "email";
-  type?: string;
+  placeholder?: string;
+  type?: "text" | "password" | "email";
 }
 
 const FormFiled = ({
