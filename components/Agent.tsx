@@ -14,7 +14,7 @@ interface AgentProps {
 
 const Agent: React.FC<AgentProps> = ({ userName }) => {
   const isSpeaking = true;
-  const currentCallStatus = CallStatus.INACTIVE;
+  const currentCallStatus = CallStatus.ACTIVE;
 
   return (
     <>
@@ -47,8 +47,13 @@ const Agent: React.FC<AgentProps> = ({ userName }) => {
       </div>
       <div className="w-full flex justify-center">
         {currentCallStatus !== CallStatus.INACTIVE ? (
-          <button>
-            <span>
+          <button className="relative btn-call">
+            <span
+              className={
+                (cn("absolute animate-ping rounded-full opacity-75"),
+                CallStatus !== CallStatus.CONNECTING && "hidden")
+              }
+            >
               {currentCallStatus === CallStatus.ACTIVE ||
               currentCallStatus === CallStatus.FINISHED
                 ? "Start Call"
