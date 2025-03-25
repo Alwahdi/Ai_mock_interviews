@@ -6,9 +6,9 @@ import { z } from "zod";
 import { Button } from "@/components/ui/button";
 import { Form } from "@/components/ui/form";
 
-const formSchema = z.object({
-  username: z.string().min(2).max(50),
-});
+// const formSchema = z.object({
+//   username: z.string().min(2).max(50),
+// });
 
 import React from "react";
 import Image from "next/image";
@@ -22,7 +22,6 @@ import {
 } from "firebase/auth";
 import { auth } from "@/firebase/client";
 import { signIn, signUp } from "@/lib/auth/auth.action";
-import { sign } from "crypto";
 
 const AuthFromSchema = (type: FormType) => {
   return z.object({

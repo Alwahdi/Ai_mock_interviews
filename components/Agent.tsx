@@ -46,7 +46,7 @@ const Agent: React.FC<AgentProps> = ({ userName }) => {
         </div>
       </div>
       <div className="w-full flex justify-center">
-        {currentCallStatus !== CallStatus.INACTIVE ? (
+        {currentCallStatus !== CallStatus.ACTIVE ? (
           <button className="relative btn-call">
             <span
               className={
